@@ -1,10 +1,12 @@
 import dao.EmployeeDao;
 
-import java.util.Scanner;
+import java.sql.*;
 import java.io.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, SQLException {
+
+        Connection connection = databaseConnection.DatabaseConnection.getConnection();
 
         System.out.println("Welcome to Employee Management Software");
 
@@ -52,7 +54,7 @@ public class Main {
 
 
         System.out.println("See you soon");
-
+        connection.close();
 
     }
 }

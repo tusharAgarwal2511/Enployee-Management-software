@@ -6,10 +6,12 @@ import databaseConnection.DatabaseConnection;
 
 public class EmployeeDao {
 
-    // inserts the data
+    /***
+     * Takes String name and String emaila dn inserts them into the database
+     * @param name String
+     * @param email String
+     */
     public void InsertData(String name, String email){
-
-//        boolean isDataInserted = false;
 
         try{
 
@@ -24,7 +26,6 @@ public class EmployeeDao {
 
             insertPreparedStatement.executeUpdate();
 
-//            isDataInserted = true;
 
         }
         catch(Exception e){

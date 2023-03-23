@@ -6,7 +6,7 @@ import java.sql.*;
 public class DatabaseConnection {
 
     public static Connection connection;
-    static passwordAndUser.MySQLPasswordAndUser mySqlPasswordAndUser = new passwordAndUser.MySQLPasswordAndUser();
+    static MySQLPasswordAndUser mySqlPasswordAndUser = new MySQLPasswordAndUser();
 
     public static Connection getConnection(){
 
