@@ -14,10 +14,15 @@ public class Main {
 
         while(true){
 
+            System.out.println("");
+            System.out.println("");
             System.out.println("PRESS 1 to ENTER DATA");
             System.out.println("PRESS 2 to DELETE DATA");
             System.out.println("PRESS 3 to SHOW DATA");
             System.out.println("PRESS 4 to EXIT");
+            System.out.println("");
+            System.out.println("");
+
 
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
