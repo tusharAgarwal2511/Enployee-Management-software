@@ -66,6 +66,11 @@ public class EmployeeDao {
 
     }
 
+    /***
+     * Takes the employee id and deleted the employee
+     * with the given idd
+     * @param userId int
+     */
     public void deleteData(int userId){
 
         try{
