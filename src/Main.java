@@ -31,7 +31,7 @@ public class Main {
                     System.out.println("ENTER EMPLOYEE EMAIL");
                     String employeeEmail = br.readLine();
 
-                    employeeDao.InsertData(employeeName, employeeEmail);
+                    employeeDao.insertData(employeeName, employeeEmail);
 
                     System.out.println("DATA INSERTED");
                 }
@@ -42,7 +42,10 @@ public class Main {
                     // update data
                 }
                 else if(userChoice == 4){
-                    // show data
+
+                    System.out.println("Here is the data");
+                    employeeDao.getData();
+
                 }
                 else if(userChoice == 5){
                     break;

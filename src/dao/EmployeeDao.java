@@ -6,16 +6,18 @@ import databaseConnection.DatabaseConnection;
 
 public class EmployeeDao {
 
+    Connection connection;
+
     /***
      * Takes String name and String emaila dn inserts them into the database
      * @param name String
      * @param email String
      */
-    public void InsertData(String name, String email){
+    public void insertData(String name, String email){
 
         try{
 
-            Connection connection = DatabaseConnection.getConnection();
+            connection = DatabaseConnection.getConnection();
 
             String INSERT_QUERY = "INSERT INTO employeedetails(name, email) VALUES(?, ?)";
 
@@ -33,4 +35,36 @@ public class EmployeeDao {
         }
 
     }
+
+    /***
+     * Show the data to the user
+     */
+
+    public void getData(){
+
+        try{
+
+            connection = DatabaseConnection.getConnection();
+
+            String GET_QUERY = "SELECT * FROM employeedetails";
+
+            Statement getStatement = connection.createStatement();
+
+            ResultSet result = getStatement.executeQuery(GET_QUERY);
+
+            while(result.next()){
+                int rowId = result.getInt("id");
+                String rowName = result.getString("name");
+                String rowEmail = result.getString("email");
+
+                System.out.println("ID: " + rowId + " Name: " + rowName + " Email: " + rowEmail);
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+
 }
