@@ -16,9 +16,8 @@ public class Main {
 
             System.out.println("PRESS 1 to ENTER DATA");
             System.out.println("PRESS 2 to DELETE DATA");
-            System.out.println("PRESS 3 to UPDATE DATA");
-            System.out.println("PRESS 4 to SHOW DATA");
-            System.out.println("PRESS 5 to EXIT");
+            System.out.println("PRESS 3 to SHOW DATA");
+            System.out.println("PRESS 4 to EXIT");
 
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -36,18 +35,21 @@ public class Main {
                     System.out.println("DATA INSERTED");
                 }
                 else if(userChoice == 2){
-                    // delete data
+                    System.out.println("ENTER THE ID OF THE USER YOU WANT TO DELETE");
+
+                    int id = Integer.parseInt(br.readLine());
+
+                    employeeDao.deleteData(id);
+
+                    System.out.println("DELETED");
                 }
                 else if(userChoice == 3){
-                    // update data
-                }
-                else if(userChoice == 4){
 
                     System.out.println("Here is the data");
                     employeeDao.getData();
 
                 }
-                else if(userChoice == 5){
+                else if(userChoice == 4){
                     break;
                 }
                 else{

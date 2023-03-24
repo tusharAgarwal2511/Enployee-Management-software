@@ -66,5 +66,27 @@ public class EmployeeDao {
 
     }
 
+    public void deleteData(int userId){
+
+        try{
+
+            connection = DatabaseConnection.getConnection();
+
+            String DELETE_QUERY = "DELETE FROM employeedetails WHERE id = ?";
+
+            PreparedStatement deletePreparedStatement = connection.prepareStatement(DELETE_QUERY);
+
+            deletePreparedStatement.setInt(1, userId);
+
+            deletePreparedStatement.executeUpdate();
+
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+
+    }
+
 
 }
